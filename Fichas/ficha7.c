@@ -13,6 +13,7 @@ LInt cons (LInt l, int x){
   }
 }
 
+
 LInt tail (LInt l){
   LInt prox;
   prox=l->prox;
@@ -20,6 +21,7 @@ LInt tail (LInt l){
   l=prox;
   return l;
 }
+
 
 LInt init (LInt l){
   Lint ant=NULL;
@@ -33,6 +35,7 @@ LInt init (LInt l){
   return h;
 }
 
+
 LInt snoc (LInt l, int x){
   LInt h=l;
   while(l!=NULL){
@@ -41,6 +44,7 @@ LInt snoc (LInt l, int x){
   l=cons(l,int x);
   return h;
 }
+
 
 LInt concat (LInt a, LInt b){
   LInt h=a;
@@ -55,5 +59,25 @@ LInt concat (LInt a, LInt b){
 }
 
 
+// 2
+
+Turma insert(Turma t,Aluno a){
+    Turma new = malloc(sizeof(struct Turma));
+    new->aluno=a;
+    new->prox=t;
+}
+
+
+int acrescentaAluno (Turma *t, Aluno a){
+  if(*t==NULL) return 1;
+  while(*t!=NULL){
+    t=&((*t)->prox);
+  }
+  insert(*t,a);
+  return 0;
+}
+
+
+Aluno *procura (Turma t, int numero){
 
 }
