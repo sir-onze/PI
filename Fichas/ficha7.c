@@ -79,5 +79,21 @@ int acrescentaAluno (Turma *t, Aluno a){
 
 
 Aluno *procura (Turma t, int numero){
+    while(t){
+      if((t->aluno->numero)==numero) return t->aluno;
+      else t=t->prox;
+    }
+  return NULL;
+}
 
+int aprovados ( Turma t){
+  int c=0;
+  while(t!=NULL){
+    if((t->aluno->nota)>=9.5){
+      c++;
+      t=t->prox;
+    }
+    else t=t->prox;
+  }
+  return c;
 }

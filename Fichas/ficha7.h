@@ -8,13 +8,11 @@ int valor;
 LInt prox;
 } Nodo;
 
-typedef struct aluno *Aluno;
-
 typedef struct aluno{
   char nome [60];
   int numero;
   int nota;
-} aluno;
+} *aluno;
 
 typedef struct turma *Turma;
 
