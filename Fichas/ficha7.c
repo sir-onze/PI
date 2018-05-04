@@ -22,6 +22,38 @@ LInt tail (LInt l){
 }
 
 LInt init (LInt l){
+  Lint ant=NULL;
+  LInt h=l;
+  while(l->prox!=NULL){
+    ant=l;
+    l=l->prox;
+  }
+  ant->prox=NULL;
+  free(l);
+  return h;
+}
 
-  
+LInt snoc (LInt l, int x){
+  LInt h=l;
+  while(l!=NULL){
+    l=l->prox;
+  }
+  l=cons(l,int x);
+  return h;
+}
+
+LInt concat (LInt a, LInt b){
+  LInt h=a;
+  while (a!=NULL) {
+    a=a->prox;
+  }
+  while(b!=NULL){
+    a=cons(a,b->valor);
+    b=b->prox;
+  }
+  return h;
+}
+
+
+
 }
